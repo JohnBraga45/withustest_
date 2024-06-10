@@ -1,0 +1,38 @@
+<div class="body">
+  <div class="search-container">
+    <h1 class="title">Previsão do Tempo</h1>
+    <p class="subtitle">Digite o nome de uma cidade para ver os detalhes do clima e outras informações</p>
+    <form (submit)="searchCities()">
+      <div class="search-input-container">
+         
+        <input
+          class="search-input"
+          type="text"
+          [(ngModel)]="cityName"
+          name="cityName"
+          placeholder="Pesquisar cidade..."
+          required
+        />
+        <button type="submit" class="search-button">Pesquisar</button>
+      </div>
+    </form>
+    <div class="search-results">
+      <div *ngIf="searchResults.length > 0">
+        <ul>
+          <li *ngFor="let city of searchResults">
+            {{ city.name }} ({{ city.country }})
+            <button (click)="viewCityDetails(city.id)" class="detail-button">
+              Detalhes
+            </button>
+            <button (click)="viewWeatherDetails(city.id)" class="weather-button">
+              Previsão do Tempo
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="searchResults.length === 0" class="no-results">
+        Nenhum resultado encontrado.
+      </div>
+    </div>
+  </div>
+</div>

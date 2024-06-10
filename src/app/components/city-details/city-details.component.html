@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="city-details-container" *ngIf="cityDetails">
+    <h2>{{ cityDetails.data.name }}</h2>
+    <div class="city-details-info">
+      <p>
+        <fa-icon [icon]="['fas', 'flag']"></fa-icon> País: {{ cityDetails.data.country }}
+      </p>
+      <p>
+        <fa-icon [icon]="['fas', 'users']"></fa-icon> População: {{ cityDetails.data.population }}
+      </p>
+      <p>
+        <fa-icon [icon]="['fas', 'map-marker-alt']"></fa-icon> Região: {{ cityDetails.data.region }}
+      </p>
+      <p>
+        <fa-icon [icon]="['fas', 'clock']"></fa-icon> Zona: {{ cityDetails.data.timezone }}
+      </p>
+      <p>
+        <fa-icon [icon]="['fas', 'globe']"></fa-icon> Código do País: {{ cityDetails.data.countryCode }}
+      </p>
+    </div>
+    <div class="navigation-link">
+      <button class="navigation-button"(click)="navigateToWeatherDetails()">Ver Previsão do Tempo</button>
+    </div>
+  </div>
+  <div class="loading" *ngIf="!cityDetails">
+    <p>Processando as informações... <fa-icon [icon]="['fas', 'spinner']" class="fa-spin"></fa-icon></p>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="main">
+  <div class="weather-phone-container" *ngIf="weatherDetails">
+    <h2>{{ weatherDetails.location.name }}</h2>
+    
+    <div class="unit-selector">
+      <label for="unit">Escolha a unidade de temperatura:</label>
+      <select id="unit" [(ngModel)]="selectedUnit" (change)="getWeatherDetails()">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+      </select>
+    </div>
+    
+    <div class="current-weather">
+      <p class="temperature">{{ selectedUnit === 'C' ? weatherDetails.current.temp_c : weatherDetails.current.temp_f }} °{{ selectedUnit }}</p>
+      <p class="condition">
+        <img [src]="weatherDetails.current.condition.icon" alt="Weather Icon">
+        {{ weatherDetails.current.condition.text }}
+      </p>
+    </div>
+    <div class="hourly-forecast">
+      <div class="hourly-forecast-cards">
+        <div class="hour-card" *ngFor="let hour of weatherDetails.forecast.forecastday[0].hour.slice(0, 3)">
+          <p>{{ hour.time | date:'shortTime' }}</p>
+          <p>{{ selectedUnit === 'C' ? hour.temp_c : hour.temp_f }} °{{ selectedUnit }}</p>
+          <img [src]="hour.condition.icon" alt="Weather Icon">
+          <p>{{ hour.condition.text }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="daily-forecast">
+      <h3>Previsão para os próximos dias</h3>
+      <div class="daily-forecast-cards">
+        <div class="day-card" *ngFor="let day of weatherDetails.forecast.forecastday">
+          <p>{{ day.date | date:'dd MMM' }}</p>
+          <p>Max: {{ selectedUnit === 'C' ? day.day.maxtemp_c : day.day.maxtemp_f }} °{{ selectedUnit }}</p>
+          <p>Min: {{ selectedUnit === 'C' ? day.day.mintemp_c : day.day.mintemp_f }} °{{ selectedUnit }}</p>
+          <img [src]="day.day.condition.icon" alt="Weather Icon">
+          <p>{{ day.day.condition.text }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="navigation">
+      <button class="navigation-button"(click)="navigateToCityDetails()">Ver Detalhes da Cidade</button>
+    </div>
+  </div>
+  <div class="loading" *ngIf="!weatherDetails">
+    <p>Processando a Previsão do Tempo... <fa-icon [icon]="['fas', 'spinner']" class="fa-spin"></fa-icon></p>
+  </div>
+  
+  
+</div>
