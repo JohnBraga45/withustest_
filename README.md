@@ -69,7 +69,7 @@ Certifique-se de que tenham o Docker instalado em seus sistemas para importar e 
 
 - Apresentação dos detalhes da cidade pesquisada.
 
-#### Exemplo de Busca por Cidade
+#### Exemplo da Previsão por cidade
 ![Exemplo de da Previsão do tempo](src/assets/images/tela4.jpeg)
 
-- Apresentação dos detalhes daos detalhes do tempo da cidade pesquisada.
+- Apresentação dos detalhes do tempo da cidade pesquisada.
