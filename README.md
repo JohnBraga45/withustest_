@@ -55,7 +55,7 @@ Certifique-se de que tenham o Docker instalado em seus sistemas para importar e 
 ## Prints de tela
 
 #### Tela Inicial
-![Tela Inicial](../weather-app/src/assets/images/tela1.jpeg)
+![Tela Inicial](src/assets/images/tela1.jpeg)
 
 - Tela principal para pesquisar as cidades.
 
@@ -65,11 +65,11 @@ Certifique-se de que tenham o Docker instalado em seus sistemas para importar e 
 - Exemplo do resultado de uma pesquisa pela cidade de Luanda.
 
 #### Apresentação da cidade
-![Exemplo de da Previsão do tempo](../weather-app/src/assets/images/tela3.jpeg)
+![Exemplo de da Previsão do tempo](src/assets/images/tela3.jpeg)
 
 - Apresentação dos detalhes da cidade pesquisada.
 
 #### Exemplo de Busca por Cidade
-![Exemplo de da Previsão do tempo](../weather-app/src/assets/images/tela4.jpeg)
+![Exemplo de da Previsão do tempo](src/assets/images/tela4.jpeg)
 
 - Apresentação dos detalhes daos detalhes do tempo da cidade pesquisada.
