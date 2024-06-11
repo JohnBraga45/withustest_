@@ -1,7 +1,7 @@
 <div class="main">
   <div class="weather-phone-container" *ngIf="weatherDetails">
     <h2>{{ weatherDetails.location.name }}</h2>
-    
+
     <div class="unit-selector">
       <label for="unit">Escolha a unidade de temperatura:</label>
       <select id="unit" [(ngModel)]="selectedUnit" (change)="getWeatherDetails()">
@@ -9,7 +9,7 @@
         <option value="F">Fahrenheit (°F)</option>
       </select>
     </div>
-    
+
     <div class="current-weather">
       <p class="temperature">{{ selectedUnit === 'C' ? weatherDetails.current.temp_c : weatherDetails.current.temp_f }} °{{ selectedUnit }}</p>
       <p class="condition">
@@ -41,11 +41,11 @@
     </div>
     <div class="navigation">
       <button class="navigation-button"(click)="navigateToCityDetails()">Ver Detalhes da Cidade</button>
+      <a  (click)="navigateToHome()" class="navigation-link" > Página Inicial</a>
     </div>
   </div>
-  <div class="loading" *ngIf="!weatherDetails">
-    <p>Processando a Previsão do Tempo... <fa-icon [icon]="['fas', 'spinner']" class="fa-spin"></fa-icon></p>
-  </div>
-  
-  
+
+</div>
+<div class="loading" *ngIf="!weatherDetails">
+  <p>Processando a Previsão do Tempo... <fa-icon [icon]="['fas', 'spinner']" class="fa-spin"></fa-icon></p>
 </div>

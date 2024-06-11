@@ -18,8 +18,10 @@
         <fa-icon [icon]="['fas', 'globe']"></fa-icon> Código do País: {{ cityDetails.data.countryCode }}
       </p>
     </div>
-    <div class="navigation-link">
-      <button class="navigation-button"(click)="navigateToWeatherDetails()">Ver Previsão do Tempo</button>
+    <div class="navigation">
+      <button class="navigation-button" (click)="navigateToWeatherDetails()">Ver Previsão do Tempo</button>
+      <a class="navigation-link" (click)="navigateToHome()"> Página Inicial</a>
+
     </div>
   </div>
   <div class="loading" *ngIf="!cityDetails">

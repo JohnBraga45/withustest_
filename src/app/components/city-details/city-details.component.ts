@@ -52,4 +52,8 @@ export class CityDetailsComponent implements OnInit {
       this.router.navigate(['/weather-details', this.cityId]);
     }
   }
+
+  navigateToHome() {
+    this.router.navigate(['/search']);
+  }
 }

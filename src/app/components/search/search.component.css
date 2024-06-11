@@ -4,7 +4,7 @@
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f2f2f2;  
+  background-color: #f2f2f2;
   font-family: Arial, sans-serif;
 }
 
@@ -16,39 +16,39 @@
   padding: 100px;
   margin: 20px auto;
   max-width: 600px;
-  background-color: #ffffff;  
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
  .search-input {
-  width: calc(100% - 100px);  
+  width: calc(100% - 100px);
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;  
+  border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
-  outline: none;  
+  outline: none;
 }
 
 .search-input:focus {
-  border-color: #007bff;  
+  border-color: #007bff;
 }
 
  .search-button {
   padding: 10px 20px;
-  margin-left: 200px;  
-  background-color: #007bff;  
+  margin-left: 200px;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;  
+  transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-  background-color: #0056b3;  
+  background-color: #0056b3;
 }
 
  .title {
@@ -74,11 +74,11 @@
 }
 
 .search-results li {
-  background-color: #fff; 
+  background-color: #fff;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,18 +87,18 @@
  .detail-button,
 .weather-button {
   padding: 8px 16px;
-  background-color: #007bff;  
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.3s ease;  
+  transition: background-color 0.3s ease;
 }
 
 .detail-button:hover,
 .weather-button:hover {
-  background-color: #0056b3;  
+  background-color: #0056b3;
 }
 
  .no-results {
@@ -106,3 +106,5 @@
   font-size: 14px;
   color: #666;
 }
+
+ 

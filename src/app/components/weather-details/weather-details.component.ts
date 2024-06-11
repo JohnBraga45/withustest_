@@ -38,7 +38,6 @@ export class WeatherDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.cityId = this.route.snapshot.paramMap.get('cityId');
-    console.log('City ID:', this.cityId);
     if (this.cityId) {
       this.getCityDetails();
     }
@@ -47,8 +46,7 @@ export class WeatherDetailsComponent implements OnInit {
   getCityDetails() {
     this.geoService.getCityDetails(this.cityId!).subscribe(
       (data) => {
-        console.log('City Details:', data);
-        if (data) {
+         if (data) {
           const cityData = data.data;
           if (cityData) {
             this.cityName = cityData.city || cityData.name || cityData.cityName;
@@ -87,5 +85,8 @@ export class WeatherDetailsComponent implements OnInit {
     if (this.cityId) {
       this.router.navigate(['/city-details', this.cityId]);
     }
+  }
+  navigateToHome() {
+    this.router.navigate(['/search']);
   }
 }

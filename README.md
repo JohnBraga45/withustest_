@@ -1,59 +1,75 @@
-# Weather App
-Este é um aplicativo de previsão do tempo desenvolvido como parte de um teste de emprego. Ele permite aos usuários buscar informações meteorológicas de diferentes cidades.
+# Weather App - Documentação de uso e Instruções Docker
+Este é um aplicativo de previsão do tempo desenvolvido como parte do  teste... Ele permite aos usuários buscar informações meteorológicas de diferentes cidades.
 
-- Funcionalidades
-Busca por nome de cidade para obter informações detalhadas.
-Exibição de previsão do tempo atual e dos próximos dias.
-Unidade de temperatura configurável (Celsius ou Fahrenheit).
-Interface responsiva e intuitiva.
+# Funcionalidades
+- Busca por nome de cidade para obter informações detalhadas.
+- Exibição de previsão do tempo atual e dos próximos dias.
+- Unidade de temperatura configurável (Celsius ou Fahrenheit).
+- Interface responsiva e intuitiva.
 
 # Pré-requisitos
 Antes de iniciar, verifique se você tem instalado:
 
-Node.js (versão 12 ou superior)
-Angular CLI
-Para Dockerização (opcional):
+- Docker
+- Node.js (Opcional para desenvolvimento local)
 
-Docker
+# Instruções para construção e Execução
+
+### Clonando o Repositório:
+
+``git clone https://github.com/JohnBraga45/withustest_.git``
+
+``cd withustest_``
+
+### Construindo a Imagem Docker:
+
+##### Certifique-se de estar no diretório raiz do projeto que contém o arquivo Dockerfile.
+
+``docker build -t my-weather-app .``
+
+
+### Executando o Contêiner Docker:
+
+Inicie um contêiner Docker com o aplicativo em execução:
+
+``docker run -p 80:80 my-weather-app``
+
+### Acessando o Aplicativo:
+Abra um navegador da web e navegue para http://localhost:80 para acessar o aplicativo de previsão do tempo.
 
 
 
-Clone o repositório:
+# Outra Opção
+Importar a imagem Docker usando o comando ``docker load -i my-weather-app.tar``
+
+### Verificar a Importação:
+Após a importação, pode verificar se a imagem foi importada corretamente usando o comando :
+``docker images
+``
+
+## Notas Adicionais
+Certifique-se de que tenham o Docker instalado em seus sistemas para importar e executar a imagem Docker.
 
 
-# Copiar código
-git clone -----
-cd weather-app
-Instale as dependências:
 
+## Prints de tela
 
-# Copiar código
-npm install
+#### Tela Inicial
+![Tela Inicial](../weather-app/src/assets/images/tela1.jpeg)
 
-# Configuração
-Obtenha uma chave de API do Weather API:
+- Tela principal para pesquisar as cidades.
 
-Vá para Weather API e obtenha uma chave de API gratuita.
-Configure a chave de API:
+#### Exemplo de Busca por Cidade
+![Exemplo de Busca por Cidade](../weather-app/src/assets/images/tela2.jpeg)
 
-Renomeie o arquivo .env.example para .env.
+- Exemplo do resultado de uma pesquisa pela cidade de Luanda.
 
-Insira sua chave de API no arquivo .env:
+#### Apresentação da cidade
+![Exemplo de da Previsão do tempo](../weather-app/src/assets/images/tela3.jpeg)
 
-plaintext
-Copiar código
-API_KEY=sua_chave_de_api_aqui
-Uso
-Inicie o servidor de desenvolvimento:
+- Apresentação dos detalhes da cidade pesquisada.
 
-bash
-Copiar código
-npm start
-Acesse o aplicativo:
+#### Exemplo de Busca por Cidade
+![Exemplo de da Previsão do tempo](../weather-app/src/assets/images/tela4.jpeg)
 
-Abra o navegador e vá para http://localhost:4200.
-
-Pesquise uma cidade:
-
-Digite o nome de uma cidade na caixa de pesquisa e pressione "Enter".
-Clique nos botões "Detalhes" ou "Previsão do Tempo" para mais informações
+- Apresentação dos detalhes daos detalhes do tempo da cidade pesquisada.
