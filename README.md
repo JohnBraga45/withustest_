@@ -60,7 +60,7 @@ Certifique-se de que tenham o Docker instalado em seus sistemas para importar e 
 - Tela principal para pesquisar as cidades.
 
 #### Exemplo de Busca por Cidade
-![Exemplo de Busca por Cidade](../weather-app/src/assets/images/tela2.jpeg)
+![Exemplo de Busca por Cidade](src/assets/images/tela2.jpeg)
 
 - Exemplo do resultado de uma pesquisa pela cidade de Luanda.
 
