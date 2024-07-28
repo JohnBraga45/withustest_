@@ -27,9 +27,5 @@ export class GeolocationService {
         'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
       }
     });
-
-
   }
-
-
 }
