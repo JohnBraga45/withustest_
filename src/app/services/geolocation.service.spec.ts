@@ -53,4 +53,44 @@ describe('GeolocationService', () => {
     expect(req.request.headers.get('X-RapidAPI-Host')).toBe('wft-geo-db.p.rapidapi.com');
     req.flush(mockResponse);
   });
+
+  it('should cache city details', () => {
+    const cityId = '123';
+    const mockResponse = { name: 'Test City', id: '123' };
+
+    service.getCityDetails(cityId).subscribe((data) => {
+      expect(data).toEqual(mockResponse);
+    });
+
+    const req = httpMock.expectOne(`${service['apiUrl']}cities/${cityId}`);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockResponse);
+
+    // Subsequent request should use cache
+    service.getCityDetails(cityId).subscribe((data) => {
+      expect(data).toEqual(mockResponse);
+    });
+
+    httpMock.expectNone(`${service['apiUrl']}cities/${cityId}`);
+  });
+
+  it('should cache search results', () => {
+    const cityName = 'Test';
+    const mockResponse = { data: [{ name: 'Test City', id: '123' }] };
+
+    service.searchCities(cityName).subscribe((data) => {
+      expect(data).toEqual(mockResponse);
+    });
+
+    const req = httpMock.expectOne(`${service['apiUrl']}cities?namePrefix=${cityName}`);
+    expect(req.request.method).toBe('GET');
+    req.flush(mockResponse);
+
+    // Subsequent request should use cache
+    service.searchCities(cityName).subscribe((data) => {
+      expect(data).toEqual(mockResponse);
+    });
+
+    httpMock.expectNone(`${service['apiUrl']}cities?namePrefix=${cityName}`);
+  });
 });
