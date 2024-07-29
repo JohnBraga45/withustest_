@@ -1,22 +1,22 @@
-# Estágio de construção
 FROM node:20.11.1 AS build
 
- WORKDIR /app
+WORKDIR /app
 
- COPY package*.json ./
+COPY package*.json ./
 
- RUN npm install
+RUN npm install
 
- COPY . .
+COPY . .
 
- RUN npm run build --prod
+RUN npm run build --prod
 
-# Estágio de produção
 FROM nginx:alpine
 
- COPY --from=build /app/dist/weather-app/browser/ /usr/share/nginx/html
+COPY --from=build /app/dist/weather-app/browser/ /usr/share/nginx/html
 
- EXPOSE 80
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Comando para iniciar o Nginx
+EXPOSE 80
+
+# Inicia o servidor Nginx
 CMD ["nginx", "-g", "daemon off;"]
